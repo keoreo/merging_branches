@@ -1,7 +1,10 @@
 from tkinter import *
 
 def Result():
-    x.set(c1_count_var.get() / c2_count_var.get())
+    try:
+        x.set(c1_count_var.get() / c2_count_var.get())
+    except ZeroDivisionError:
+        x.set("На 0 делить нельзя!")
 
 
 root = Tk()
@@ -24,7 +27,7 @@ c2_count.place(x=375, y=230)
 c2_count_entry = Entry(width='5', textvariable=c2_count_var)
 c2_count_entry.place(x=380, y=260)
 
-btn = Button(root, text="Сложить", command=Result)
+btn = Button(root, text="Делить", command=Result)
 btn.place(x=100, y=100)
 
 Output = Label(textvariable=x, font="20")
