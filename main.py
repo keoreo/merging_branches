@@ -1,7 +1,7 @@
 from tkinter import *
 
 def Result():
-    x.set(c1_count_var.get() + c2_count_var.get())
+    x.set(c1_count_var.get() / c2_count_var.get())
 
 
 root = Tk()
